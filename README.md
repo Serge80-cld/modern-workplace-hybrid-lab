@@ -1,372 +1,180 @@
-README INITIAL — Modern Workplace Hybrid Lab
+\# Modern Workplace Hybrid Lab – Architecture complète
 
-(Tu peux le copier‑coller tel quel dans ton futur dépôt GitHub)
 
 
+\## 🎯 Objectif
 
-Modern Workplace Hybrid Lab – Architecture, Migration \& Sécurité
+Ce projet démontre la mise en place d’un environnement \*\*Modern Workplace hybride\*\* complet, incluant :
 
-Ce dépôt contient un lab complet Modern Workplace Hybride, simulant une entreprise réelle en transition depuis un environnement Active Directory On-Prem vers un environnement Cloud-First basé sur Entra ID, Intune, Autopilot, et les principes Zero Trust.
 
 
+\- Identité hybride (AD On-Prem + Entra ID)
 
-L’objectif est de fournir une architecture réaliste, documentée, sécurisée, et reproductible, couvrant l’ensemble des compétences recherchées sur le marché en 2026.
+\- Hybrid Azure AD Join
 
+\- Intune MDM \& Configuration Profiles
 
+\- Windows Autopilot (User-driven, Self-deploying)
 
-🎯 Objectifs du Lab
+\- Packaging Win32 (.intunewin)
 
-Déployer un environnement hybride AD DS + Entra ID
+\- Security Baselines \& Compliance
 
+\- Zero Trust (Conditional Access, Identity Protection)
 
+\- Microsoft Defender for Endpoint (EDR, TVM, ASR)
 
-Configurer Entra Connect (Azure AD Connect)
+\- Automatisation \& standardisation du poste de travail
 
 
 
-Mettre en place le Hybrid Join
+Ce lab reflète les bonnes pratiques Microsoft pour les environnements d’entreprise.
 
 
 
-Migrer progressivement les GPO → Intune
+\---
 
 
 
-Déployer des postes via Autopilot
+\# 🧩 Architecture globale
 
 
 
-Gérer les applications via Intune Win32 Packaging
+L’environnement repose sur :
 
 
 
-Implémenter les politiques Zero Trust
+\- \*\*AD On-Prem\*\* pour l’identité locale  
 
+\- \*\*Entra Connect\*\* pour la synchronisation  
 
+\- \*\*Entra ID\*\* comme autorité d’identité cloud  
 
-Activer et configurer Defender for Endpoint
+\- \*\*Hybrid Azure AD Join\*\* pour les appareils  
 
+\- \*\*Intune\*\* pour la gestion du poste de travail  
 
+\- \*\*Autopilot\*\* pour le déploiement automatisé  
 
-Documenter l’architecture et les flux
+\- \*\*MDE\*\* pour la sécurité avancée  
 
+\- \*\*Zero Trust\*\* comme modèle de sécurité global  
 
 
-Automatiser via PowerShell
 
+Diagrammes disponibles dans :  
 
+📁 `docs/diagrams/`
 
-Structurer un dépôt GitHub professionnel
 
 
+\---
 
-🏗️ Architecture Globale
 
-Le lab simule une entreprise avec :
 
+\# 📚 Documentation
 
 
-On-Prem
 
-Active Directory Domain Services (AD DS)
+La documentation complète est disponible dans :
 
 
 
-DNS interne
+```
 
+docs/
 
+├── architecture-overview.md
 
-OU structurées
+├── runbook.md
 
+├── portfolio-summary.md
 
+└── diagrams/
 
-GPO existantes
+```
 
 
 
-Serveur Entra Connect
+\---
 
 
 
-Cloud
+\# 🔐 Sécurité \& Zero Trust
 
-Entra ID (Azure AD)
 
 
+Implémentation complète :
 
-Intune (Endpoint Manager)
+\- Conditional Access (Require MFA, Require compliant device)
 
+\- Identity Protection (User Risk, Sign-in Risk)
 
+\- Microsoft Defender for Endpoint (EDR, TVM, ASR)
 
-Autopilot
+\- Hardening Windows 10/11
 
+\- BitLocker XTS-AES 256
 
+\- Security Baselines
 
-Conditional Access
 
 
+\---
 
-Defender for Endpoint
 
 
+\# 🛠️ Déploiement \& Automatisation
 
-Compliance \& Configuration Profiles
 
 
+\- Windows Autopilot (end-to-end)
 
-Windows Update for Business
+\- ESP (Enrollment Status Page)
 
+\- Win32 Packaging (.intunewin)
 
+\- Scripts PowerShell IME
 
-App Protection Policies (MAM)
+\- Compliance Policies
 
+\- Configuration Profiles
 
 
-Flux clés
 
-Synchronisation identités (PHS)
+\---
 
 
 
-Hybrid Join
+\# 🧪 Objectifs pédagogiques
 
 
 
-Device Enrollment
+Ce projet démontre :
 
+\- Une architecture Modern Workplace complète
 
+\- Une approche cloud-first sécurisée
 
-Packaging Win32
+\- Une automatisation du cycle de vie du poste de travail
 
+\- Une implémentation Zero Trust opérationnelle
 
+\- Une expertise Intune + Autopilot + MDE
 
-Migration GPO → Intune
 
 
+\---
 
-Zero Trust Access Control
 
 
+\# 👤 Auteur
 
-📁 Structure du Dépôt
 
-Code
 
-modern-workplace-hybrid-lab/
+\*\*Serge — Cloud Engineer / Cloud Architect Modern Workplace\*\*  
 
-│
+Spécialisé en environnements hybrides, Intune, Autopilot, Zero Trust et sécurité Microsoft 365.
 
-├── architecture/
 
-│   ├── diagram.png
-
-│   └── flows.md
-
-│
-
-├── ad-onprem/
-
-│   ├── install-ad.md
-
-│   ├── ou-structure.md
-
-│   └── gpo-baseline.md
-
-│
-
-├── entra-connect/
-
-│   ├── install-connect.md
-
-│   ├── hybrid-join.md
-
-│   └── sync-validation.md
-
-│
-
-├── intune/
-
-│   ├── compliance/
-
-│   ├── configuration/
-
-│   ├── windows-update/
-
-│   └── baselines/
-
-│
-
-├── autopilot/
-
-│   ├── autopilot-json/
-
-│   ├── esp/
-
-│   └── deployment-tests.md
-
-│
-
-├── packaging/
-
-│   ├── win32/
-
-│   ├── msi/
-
-│   ├── remediation/
-
-│   └── scripts/
-
-│
-
-├── gpo-migration/
-
-│   ├── export-gpo.md
-
-│   ├── analysis.md
-
-│   └── intune-equivalent.md
-
-│
-
-├── security/
-
-│   ├── conditional-access/
-
-│   ├── defender/
-
-│   ├── bitlocker/
-
-│   └── asr/
-
-│
-
-└── README.md
-
-🔐 Sécurité \& Zero Trust
-
-Le lab inclut :
-
-
-
-MFA obligatoire
-
-
-
-Passwordless (Windows Hello / Authenticator)
-
-
-
-Conditional Access (CA)
-
-
-
-Device Compliance
-
-
-
-Defender for Endpoint
-
-
-
-Attack Surface Reduction (ASR)
-
-
-
-BitLocker + récupération automatique
-
-
-
-AppLocker / WDAC (optionnel)
-
-
-
-🧩 Difficultés rencontrées \& Résolution
-
-1\. Gestion de l’hybride (AD + Entra ID)
-
-Problèmes de synchronisation
-
-
-
-Mauvais filtrage OU
-
-
-
-Mauvaise configuration Hybrid Join
-
-➡ Résolution : configuration propre d’Entra Connect + validation des attributs.
-
-
-
-2\. Migration GPO → Intune
-
-GPO non compatibles
-
-
-
-Paramètres non migrables
-
-➡ Résolution : analyse + conversion + remédiation via scripts.
-
-
-
-3\. Packaging Win32
-
-Mauvaises detection rules
-
-
-
-Mauvais silent install
-
-➡ Résolution : packaging propre + scripts PowerShell + remédiation.
-
-
-
-4\. Autopilot
-
-Mauvais JSON
-
-
-
-ESP bloqué
-
-➡ Résolution : configuration progressive + logs + validation.
-
-
-
-🧪 Tests \& Validation
-
-Test Hybrid Join
-
-
-
-Test enrollment Intune
-
-
-
-Test compliance
-
-
-
-Test packaging Win32
-
-
-
-Test Autopilot
-
-
-
-Test CA / MFA
-
-
-
-Test Defender onboarding
-
-
-
-👤 Auteur
-
-Serge – Cloud \& Modern Workplace Engineer  
-
-Spécialiste Azure, Entra ID, Intune, Packaging, Zero Trust \& Automatisation.
 
