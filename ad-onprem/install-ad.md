@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Déployer un contrôleur de domaine Windows Server pour simuler l’environnement On‑Prem d’une entreprise hybride Modern Workplace.
 
