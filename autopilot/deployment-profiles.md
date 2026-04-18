@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer les Deployment Profiles Autopilot pour définir le comportement du poste lors du premier démarrage :
 
