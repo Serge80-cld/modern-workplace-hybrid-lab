@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\##  Objectif
 
 Ce projet démontre la mise en place d’un environnement \*\*Modern Workplace hybride\*\* complet, incluant :
 
@@ -36,7 +36,7 @@ Ce lab reflète les bonnes pratiques Microsoft pour les environnements d’entre
 
 
 
-\# 🧩 Architecture globale
+\#  Architecture globale
 
 
 
@@ -64,7 +64,7 @@ L’environnement repose sur :
 
 Diagrammes disponibles dans :  
 
-📁 `docs/diagrams/`
+ `docs/diagrams/`
 
 
 
@@ -72,7 +72,7 @@ Diagrammes disponibles dans :
 
 
 
-\# 📚 Documentation
+\#  Documentation
 
 
 
@@ -100,7 +100,7 @@ docs/
 
 
 
-\# 🔐 Sécurité \& Zero Trust
+\#  Sécurité \& Zero Trust
 
 
 
@@ -124,7 +124,7 @@ Implémentation complète :
 
 
 
-\# 🛠️ Déploiement \& Automatisation
+\#  Déploiement \& Automatisation
 
 
 
@@ -146,7 +146,7 @@ Implémentation complète :
 
 
 
-\# 🧪 Objectifs pédagogiques
+\#  Objectifs pédagogiques
 
 
 
@@ -168,7 +168,7 @@ Ce projet démontre :
 
 
 
-\# 👤 Auteur
+\#  Auteur
 
 
 
