@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Créer, packager et déployer des applications Win32 dans Intune en utilisant le format `.intunewin`.  
 
