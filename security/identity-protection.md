@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Décrire le rôle d’\*\*Identity Protection\*\* dans la détection et la remédiation des risques liés aux identités.  
 
