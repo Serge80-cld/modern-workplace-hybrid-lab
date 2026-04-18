@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Définir les règles de conformité Intune pour garantir que les appareils respectent les exigences de sécurité de l’entreprise.  
 
