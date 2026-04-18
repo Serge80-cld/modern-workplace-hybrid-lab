@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Définir une baseline GPO propre avant migration vers Intune.
 
@@ -16,7 +16,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔹 Password Policy
+\### Password Policy
 
 \- Minimum length : 12
 
@@ -26,7 +26,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔹 Audit Policy
+\### Audit Policy
 
 \- Logon events
 
@@ -36,7 +36,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔹 Windows Defender
+\### Windows Defender
 
 \- Real-time protection
 
@@ -46,7 +46,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔹 Firewall
+\### Firewall
 
 \- Domain profile : Enabled
 
@@ -64,7 +64,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔸 Paramètres compatibles
+\### Paramètres compatibles
 
 \- Windows Update
 
@@ -80,7 +80,7 @@ Définir une baseline GPO propre avant migration vers Intune.
 
 
 
-\### 🔸 Paramètres non compatibles
+\### Paramètres non compatibles
 
 \- Scripts de logon/logoff
 
