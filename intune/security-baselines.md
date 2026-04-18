@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Appliquer les Security Baselines Microsoft pour renforcer la sécurité des appareils Windows 10/11 dans un environnement Modern Workplace.  
 
