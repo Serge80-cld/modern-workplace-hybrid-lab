@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer l’Enrollment Status Page (ESP) pour contrôler l’installation des applications et des politiques lors du déploiement Autopilot.  
 
