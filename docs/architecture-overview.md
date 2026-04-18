@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Présenter l’architecture globale du lab Modern Workplace hybride, incluant :
 
