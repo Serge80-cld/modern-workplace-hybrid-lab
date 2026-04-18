@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer Entra Connect après l’installation pour garantir une synchronisation fiable, sécurisée et compatible avec un environnement Modern Workplace hybride.
 
