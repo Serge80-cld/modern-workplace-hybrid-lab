@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Créer une structure d’OU propre, lisible, et compatible avec Azure AD Connect + Intune.
 
