@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Décrire l’intégration, la configuration et les capacités de \*\*Microsoft Defender for Endpoint (MDE)\*\* dans un environnement Modern Workplace hybride.  
 
