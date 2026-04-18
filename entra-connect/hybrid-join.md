@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer le Hybrid Azure AD Join pour permettre aux appareils AD On-Prem d’être enregistrés automatiquement dans Entra ID (Azure AD), afin d’activer Intune, Conditional Access et les scénarios Modern Workplace.
 
