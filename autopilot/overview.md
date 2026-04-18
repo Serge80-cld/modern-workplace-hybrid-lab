@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Présenter le fonctionnement, les scénarios et les avantages de Windows Autopilot dans un environnement Modern Workplace hybride (Hybrid Azure AD Join + Intune).
 
