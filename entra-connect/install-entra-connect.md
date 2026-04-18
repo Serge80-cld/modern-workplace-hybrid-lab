@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Installer Entra Connect pour synchroniser les identités AD On-Prem vers Entra ID (Azure AD) dans un environnement hybride Modern Workplace.
 
