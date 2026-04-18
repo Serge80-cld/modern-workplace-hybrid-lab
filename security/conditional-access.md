@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer les règles \*\*Conditional Access (CA)\*\* pour sécuriser l’accès aux ressources cloud en appliquant les principes Zero Trust :
 
