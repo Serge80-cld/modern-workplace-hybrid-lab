@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Enregistrer les appareils Windows dans Autopilot afin qu’ils puissent recevoir automatiquement un Deployment Profile lors du premier démarrage.
 
