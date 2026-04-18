@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Déployer et gérer la configuration des appareils Windows 10/11 via Intune en utilisant les profils de configuration modernes (Settings Catalog).
 
