@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Présenter les principes du modèle Zero Trust et son application dans un environnement Modern Workplace hybride (AD On-Prem + Entra ID + Intune + MDE).
 
