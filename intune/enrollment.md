@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Configurer les méthodes d’enrôlement des appareils dans Microsoft Intune pour un environnement Modern Workplace hybride (Hybrid Azure AD Join + Intune MDM).
 
