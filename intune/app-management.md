@@ -4,7 +4,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Gérer le cycle de vie des applications dans un environnement Modern Workplace via Microsoft Intune :
 
