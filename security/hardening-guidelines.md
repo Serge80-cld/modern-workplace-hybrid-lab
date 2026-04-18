@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Fournir un ensemble de bonnes pratiques de \*\*hardening\*\* pour sécuriser un environnement Modern Workplace hybride :
 
