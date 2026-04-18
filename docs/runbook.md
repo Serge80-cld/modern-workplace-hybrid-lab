@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Fournir un guide opérationnel clair et structuré pour :
 
