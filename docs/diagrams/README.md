@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Fournir les instructions pour créer les diagrammes d’architecture du lab Modern Workplace hybride.  
 
