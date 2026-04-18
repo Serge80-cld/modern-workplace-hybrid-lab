@@ -2,7 +2,7 @@
 
 
 
-\## 🎯 Objectif
+\## Objectif
 
 Présenter une synthèse professionnelle du lab Modern Workplace hybride, destinée à :
 
