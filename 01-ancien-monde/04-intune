@@ -1,1 +1,222 @@
+# 04 – Intune (Microsoft Endpoint Management)
+
+Intune est la plateforme cloud de gestion du poste de travail dans le Modern Workplace.  
+Elle remplace progressivement GPO, MECM, WSUS et les scripts locaux.
+
+Ce dossier présente les concepts clés, les bonnes pratiques et les éléments essentiels d’une architecture Intune moderne.
+
+---
+
+# 🔹 1. Settings Catalog (remplace GPO)
+
+Le Settings Catalog est la brique la plus importante d’Intune :
+
+- Remplace les GPO classiques
+- Plus de 10 000 paramètres Windows
+- Recherche rapide
+- Versioning automatique
+- Assignation dynamique
+- Support Windows 10/11, macOS, iOS, Android
+
+ **C’est la nouvelle façon de configurer un poste Windows.**
+
+---
+
+# 🔹 2. Configuration Profiles
+
+Les profils Intune permettent de configurer :
+
+- Paramètres Windows
+- Restrictions
+- Paramètres de sécurité
+- Paramètres réseau
+- Paramètres d’expérience utilisateur
+- Paramètres spécifiques OEM
+
+Types de profils :
+
+- Settings Catalog
+- Templates (Legacy)
+- Custom (OMA-URI)
+
+👉 **Settings Catalog = recommandé par Microsoft.**
+
+---
+
+# 🔹 3. Compliance Policies
+
+Les politiques de conformité définissent :
+
+- Les exigences minimales du poste
+- Les règles de sécurité
+- Les versions minimales de Windows
+- Le chiffrement (BitLocker)
+- L’intégrité du système
+- L’état MDE (EDR)
+
+Elles sont utilisées par :
+
+- Conditional Access  
+- Zero Trust  
+- MDE  
+
+ **Un poste non conforme = accès bloqué.**
+
+---
+
+# 🔹 4. Security Baselines
+
+Les baselines sont des modèles de sécurité préconfigurés :
+
+- Windows 10/11 Security Baseline
+- Microsoft Defender Baseline
+- Edge Baseline
+
+Elles permettent :
+
+- Un durcissement rapide
+- Une conformité standardisée
+- Une réduction des risques
+
+ **Point de départ idéal pour sécuriser un tenant.**
+
+---
+
+# 🔹 5. Windows Update for Business (WUfB)
+
+La gestion cloud des mises à jour :
+
+- Rings de déploiement
+- Feature Updates
+- Quality Updates
+- Deadlines
+- Grace Period
+- Pas de WSUS
+
+ **WUfB = WSUS cloud-native.**
+
+---
+
+# 🔹 6. Packaging Win32 (.intunewin)
+
+Le packaging moderne des applications :
+
+- Conversion EXE/MSI → .intunewin
+- Scripts d’installation silencieuse
+- Détection personnalisée
+- Dépendances
+- Versioning
+- Assignation dynamique
+
+Structure recommandée :
+/Win32Apps
+/AppName
+install.ps1
+uninstall.ps1
+detection.ps1
+AppName.intunewin
+
+👉 **Win32 = le standard pour les apps d’entreprise.**
+
+---
+
+# 🔹 7. Proactive Remediations
+
+L’outil le plus puissant d’Intune :
+
+- Scripts de détection + correction
+- Exécution planifiée
+- Automatisation du support
+- Remédiation silencieuse
+- Intégration MDE
+
+Exemples :
+
+- Réparer OneDrive
+- Réparer Windows Update
+- Réinitialiser le Start Menu
+- Vérifier BitLocker
+- Nettoyer les profils corrompus
+
+ **C’est le “SCCM Task Sequence” du cloud.**
+
+---
+
+# 🔹 8. Monitoring & Reporting
+
+Intune fournit :
+
+- Rapports de conformité
+- Rapports de sécurité
+- Rapports d’applications
+- Rapports d’inscription
+- Logs d’activité
+- Intégration Power BI
+
+ **La visibilité cloud est bien supérieure à MECM.**
+
+---
+
+# 🔹 9. Schéma ASCII – Architecture Intune
++----------------------+
+|      Entra ID        |
+|  (Identité Cloud)    |
++----------+-----------+
+|
+| Auth / Compliance
+|
++---------------------+----------------------+
+|                                            |
++-------+-------+                            +--------+--------+
+|     Intune    |                            |   Conditional   |
+| (Config, Sec) |                            |     Access      |
++---------------+                            +------------------+
+|
+|
++-------+-------+
+|   Autopilot   |
+| (Provisioning)|
++---------------+
+|
+|
++-------+-------+
+|     WUfB      |
+| (Updates)     |
++---------------+
+|
+|
++-------+-------+
+|      MDE      |
+|   (Sécurité)  |
++---------------+
+
+---
+
+# 🔹 10. Ce qu’il faut retenir absolument
+
+- Intune remplace GPO, WSUS, MECM (partiellement)
+- Settings Catalog = nouvelle configuration
+- Compliance = Zero Trust
+- Win32 = packaging moderne
+- Proactive Remediations = automatisation avancée
+- WUfB = mises à jour cloud
+- Autopilot = provisioning moderne
+
+ **Intune est le cœur du Modern Workplace.**
+
+---
+
+# 🔹 11. Lien avec la transition
+
+Intune est essentiel pour :
+
+- Migrer les GPO → Settings Catalog  
+- Migrer WSUS → WUfB  
+- Migrer MECM Apps → Win32  
+- Migrer OSD → Autopilot  
+- Implémenter Zero Trust  
+- Automatiser via Proactive Remediations  
+
+ **Intune est la destination finale du poste de travail moderne.**
+
 
