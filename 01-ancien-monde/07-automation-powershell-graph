@@ -1,1 +1,159 @@
+# 07 – Automatisation PowerShell & Microsoft Graph
 
+Ce dossier présente les scripts et méthodes d’automatisation modernes pour gérer un tenant Microsoft 365 / Intune / Entra ID.  
+L’automatisation est un pilier essentiel du Modern Workplace, permettant de remplacer les tâches manuelles par des workflows fiables, rapides et reproductibles.
+
+---
+
+# 🔹 1. Pourquoi automatiser ?
+
+L’automatisation permet :
+
+- Réduction des erreurs humaines  
+- Gain de temps massif  
+- Standardisation des opérations  
+- Documentation vivante  
+- Exécution à grande échelle  
+- Intégration dans des pipelines CI/CD  
+- Gouvernance et conformité  
+
+👉 **Un ingénieur Modern Workplace doit savoir automatiser.**
+
+---
+
+# 🔹 2. PowerShell moderne (PowerShell 7)
+
+PowerShell 7 apporte :
+
+- Performance améliorée  
+- Compatibilité multi‑plateforme  
+- Modules modernes (Graph, Intune, Azure)  
+- Support long terme  
+
+Modules essentiels :
+Microsoft.Graph
+Microsoft.Graph.Intune
+AzureAD (legacy)
+MSOnline (legacy)
+
+👉 **Microsoft.Graph est le module recommandé par Microsoft.**
+
+---
+
+# 🔹 3. Microsoft Graph – Le cœur de l’automatisation
+
+Microsoft Graph permet d’automatiser :
+
+- Entra ID (users, groups, devices)  
+- Intune (apps, policies, compliance, devices)  
+- Autopilot (profils, devices, imports)  
+- MDE (exclusions, onboarding, actions)  
+- Teams, SharePoint, Exchange, etc.  
+
+Authentification :
+
+```powershell
+Connect-MgGraph -Scopes "Device.ReadWrite.All","User.ReadWrite.All","Group.ReadWrite.All"
+Select-MgProfile -Name beta
+ Graph = API unifiée de tout l’écosystème Microsoft 365.
+4. Exemples de scripts utiles (à ajouter dans ce dossier)
+✔️ 1) Lister les devices Intune
+
+Connect-MgGraph -Scopes "Device.Read.All"
+Select-MgProfile beta
+
+Get-MgDeviceManagementManagedDevice |
+    Select-Object deviceName, userPrincipalName, operatingSystem, complianceState
+
+2) Importer un Hardware Hash Autopilot via Graph
+Connect-MgGraph -Scopes "DeviceManagementServiceConfig.ReadWrite.All"
+Select-MgProfile beta
+
+Import-MgDeviceManagementWindowsAutopilotDeviceIdentity -InputFile "C:\HWID\AutopilotHWID.csv"
+3) Créer un groupe dynamique Entra ID
+Connect-MgGraph -Scopes "Group.ReadWrite.All"
+Select-MgProfile beta
+
+New-MgGroup -DisplayName "W11-Autopilot" `
+            -MailEnabled:$false `
+            -MailNickname "W11-Autopilot" `
+            -SecurityEnabled:$true `
+            -GroupTypes "DynamicMembership" `
+            -MembershipRule "(device.deviceOSType -eq ""Windows"") -and (device.deviceOSVersion -startsWith ""10.0.2"")" `
+            -MembershipRuleProcessingState "On"
+✔️ 4) Lister les applications Win32 Intune
+Connect-MgGraph -Scopes "DeviceManagementApps.Read.All"
+Select-MgProfile beta
+
+Get-MgDeviceAppManagementMobileApp |
+    Where-Object { $_.'@odata.type' -eq "#microsoft.graph.win32LobApp" } |
+    Select-Object displayName, description, publisher, isFeatured
+✔️ 5) Déclencher une action MDE (ex : isolation)
+Connect-MgGraph -Scopes "ThreatHunting.ReadWrite.All"
+Select-MgProfile beta
+
+Invoke-MgSecurityDeviceAction -DeviceId "<ID>" -Action "isolate"
+
+Ces scripts montrent que tu sais automatiser Intune, Autopilot, Entra ID et MDE.
+
+5. Architecture ASCII – Automatisation Modern Workplace
+
+                   +----------------------+
+                   |      Microsoft       |
+                   |        Graph         |
+                   +----------+-----------+
+                              |
+                              | API REST
+                              |
+        +---------------------+----------------------+
+        |                                            |
++-------+-------+                            +--------+--------+
+|   PowerShell  |                            |  Automations   |
+| (Modules Mg*) |                            |  (Scripts, CI) |
++---------------+                            +------------------+
+        |
+        |
++-------+-------+
+|   Intune      |
+| (Apps, Config)|
++---------------+
+        |
+        |
++-------+-------+
+|  Entra ID     |
+| (Users, Groups)|
++---------------+
+        |
+        |
++-------+-------+
+|   Autopilot   |
+| (Devices)     |
++---------------+
+
+6. Ce qu’il faut retenir absolument
+PowerShell 7 = standard moderne
+
+Microsoft Graph = API unifiée
+
+Automatisation = compétence clé
+
+Scripts = documentation vivante
+
+Intune, Entra ID, Autopilot, MDE = entièrement automatisables
+
+ Un ingénieur Modern Workplace doit savoir automatiser un tenant.
+
+7. Lien avec la transition
+L’automatisation est essentielle pour :
+
+Migrer MECM → Intune
+
+Gérer Autopilot à grande échelle
+
+Maintenir la conformité Zero Trust
+
+Gérer les devices hybrides
+
+Industrialiser les opérations
+
+ Automatiser = scaler = professionnaliser.
