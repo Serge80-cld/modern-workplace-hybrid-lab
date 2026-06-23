@@ -1,1 +1,180 @@
+# 05 – Windows Autopilot (Provisioning Moderne)
+
+Windows Autopilot est la technologie de provisioning moderne qui remplace totalement les Task Sequences MECM (OSD).  
+Il permet un déploiement cloud-first, automatisé, sans infrastructure, et sans image personnalisée.
+
+---
+
+# 🔹 1. Pourquoi Autopilot remplace OSD
+
+OSD (MECM) repose sur :
+
+- PXE
+- Boot Images
+- WIM personnalisées
+- Task Sequences
+- Réseau interne
+- Serveurs (DP, MP, SUP)
+
+Autopilot repose sur :
+
+- Entra ID
+- Intune
+- ESP
+- Packages Win32
+- WUfB
+- MDE
+
+ **Autopilot = OSD sans infrastructure, sans PXE, sans WIM.**
+
+---
+
+# 🔹 2. Les modes Autopilot
+
+## ✔️ User-Driven  
+Le mode le plus utilisé en entreprise :
+
+- L’utilisateur s’authentifie
+- Le device s’enrôle automatiquement
+- ESP applique les apps et policies
+- Zero Touch pour l’IT
+
+---
+
+## ✔️ Self-Deploying  
+Pour les kiosks, salles de réunion, bornes :
+
+- Pas d’utilisateur
+- Provisioning automatique
+- Entra Join direct
+
+---
+
+## ✔️ Pre-Provisioning (anciennement WhiteGlove)  
+Pour préparer les machines avant livraison :
+
+- L’IT prépare le device
+- ESP installe apps + policies
+- L’utilisateur reçoit un poste déjà prêt
+
+👉 **Idéal pour les déploiements massifs.**
+
+---
+
+# 🔹 3. ESP (Enrollment Status Page)
+
+L’ESP contrôle :
+
+- L’ordre d’installation
+- Les apps obligatoires
+- Les policies critiques
+- Les redémarrages
+- Les erreurs
+
+Étapes :
+
+1. Device Preparation  
+2. Device Setup  
+3. Account Setup  
+
+ **ESP = le remplaçant moderne des Task Sequences.**
+
+---
+
+# 🔹 4. Prérequis Autopilot
+
+- Device enregistré (Hash ou OEM)
+- Entra ID + Intune
+- MDM autorisé
+- Windows 10/11 Pro/Enterprise
+- Accès Internet
+- Pas de VPN nécessaire
+
+ **Autopilot fonctionne même hors réseau d’entreprise.**
+
+---
+
+# 🔹 5. Architecture ASCII – Autopilot
++----------------------+
+|      Entra ID        |
+|  (Identité Cloud)    |
++----------+-----------+
+|
+| Auth / Join
+|
++----------+-----------+
+|        Intune        |
+| (Config, Apps, Sec)  |
++----------+-----------+
+|
+| ESP / Policies / Apps
+|
++----------+-----------+
+|     Autopilot        |
+| (Provisioning Cloud) |
++----------+-----------+
+|
+| WUfB / MDE
+|
++----------+-----------+
+|   Windows 10/11      |
++-----------------------+
+
+---
+
+# 🔹 6. Processus complet Autopilot
+
+1. Le device démarre  
+2. Connexion Internet  
+3. Vérification du profil Autopilot  
+4. Entra Join  
+5. ESP démarre  
+6. Installation des apps Win32  
+7. Application des policies  
+8. Activation MDE  
+9. Conformité  
+10. Accès via Conditional Access
+
+ **Le poste est prêt sans intervention IT.**
+
+---
+
+# 🔹 7. Scripts utiles (à ajouter dans  repo plus tard)
+
+- Script de récupération du Hardware Hash  
+- Script de reset Autopilot  
+- Script de diagnostic ESP  
+- Script de vérification MDM  
+- Script de nettoyage pré‑Autopilot
+
+
+
+---
+
+# 🔹 8. Ce qu’il faut retenir absolument
+
+- Autopilot remplace OSD  
+- ESP remplace les Task Sequences  
+- Win32 remplace les Applications MECM  
+- WUfB remplace WSUS  
+- MDE remplace l’antivirus GPO  
+- Entra ID remplace le Domain Join  
+
+ **Autopilot = provisioning moderne, cloud-first, sans infrastructure.**
+
+---
+
+# 🔹 9. Lien avec la transition
+
+Autopilot est la destination finale du provisioning :
+
+- OSD → Autopilot  
+- PXE → Internet  
+- WIM → Windows natif  
+- Task Sequence → ESP  
+- MECM Apps → Win32  
+- WSUS → WUfB  
+
+ **Autopilot est la preuve que tu maîtrises la modernisation du poste.**
+
 
