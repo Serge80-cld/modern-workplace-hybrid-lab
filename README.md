@@ -1,8 +1,74 @@
-\# Modern Workplace Hybrid Lab – Architecture complète
+# Modern Workplace – Ancien Monde → Nouveau Monde → La Transition
 
+## 1. L’Ancien Monde (On-Prem)
 
+L’environnement historique des entreprises, basé sur :
 
-\##  Objectif
+- **Active Directory** (identité locale)
+- **Kerberos / NTLM**
+- **GPO** (configuration du poste)
+- **MECM / SCCM** (OSD, packaging, collections, WSUS/SUP)
+- **Windows Server** (AD, DNS, DHCP, File Servers)
+- **PXE / Task Sequences**
+- **Scripts locaux**
+
+ **Modèle centralisé, dépendant du réseau interne, basé sur des serveurs.**
+
+---
+
+## 2. Le Nouveau Monde (Cloud Modern Workplace)
+
+Le modèle moderne, cloud-native, basé sur l’identité :
+
+- **Entra ID** (identité cloud)
+- **Conditional Access / MFA / Identity Protection**
+- **Intune** (Settings Catalog, Compliance, Security Baselines)
+- **Windows Autopilot** (remplace OSD)
+- **Windows Update for Business** (remplace WSUS)
+- **Defender for Endpoint** (EDR, TVM)
+- **PowerShell + Microsoft Graph** (automatisation avancée)
+- **Zero Trust**
+
+ **Modèle distribué, indépendant du réseau interne, basé sur l’identité.**
+
+---
+
+## 3. Tableau de référence – Ancien Monde vs Nouveau Monde
+
+| Concept | Ancien Monde | Nouveau Monde |
+|--------|---------------|----------------|
+| **Identité** | Active Directory | Entra ID |
+| **Auth** | Kerberos / NTLM | OAuth2 / Modern Auth |
+| **Config poste** | GPO | Intune (Settings Catalog) |
+| **Provisioning** | OSD (MECM) | Autopilot |
+| **Mises à jour** | WSUS / SUP | Windows Update for Business |
+| **Sécurité** | Antivirus + GPO | Defender + Conditional Access |
+| **Automatisation** | Scripts locaux | PowerShell + Graph API |
+| **Infra** | Serveurs | Cloud 100 % |
+| **Join** | Domain Join | Entra Join / Hybrid Join |
+| **Transition** | MECM | Cloud Attach / Co-Management |
+
+---
+
+## 4. La Transition (mon expertise clé)
+
+Ce laboratoire reproduit les scénarios de transformation Modern Workplace :
+
+- Environnement hybride **AD + Entra ID**
+- **Hybrid Join**
+- **Cloud Attach / Co-Management**
+- Migration progressive **MECM → Intune**
+- Remplacement **OSD par Autopilot**
+- Packaging Win32 industrialisé (détection, dépendances, versioning)
+- Automatisations **PowerShell + Graph**
+- Remédiations automatiques (Proactive Remediations)
+- Dashboards **Power BI** (conformité, sécurité, inventaire)
+
+ **Objectif : démontrer la maîtrise complète de la transition entre l’ancien monde et le nouveau monde.**
+
+---
+\ Modern Workplace Hybrid Lab – Architecture complète
+\  Objectif
 
 Ce projet démontre la mise en place d’un environnement \*\*Modern Workplace hybride\*\* complet, incluant :
 
@@ -36,7 +102,7 @@ Ce lab reflète les bonnes pratiques Microsoft pour les environnements d’entre
 
 
 
-\#  Architecture globale
+\  Architecture globale
 
 
 
@@ -100,7 +166,7 @@ docs/
 
 
 
-\#  Sécurité \& Zero Trust
+\ Sécurité \& Zero Trust
 
 
 
@@ -124,7 +190,7 @@ Implémentation complète :
 
 
 
-\#  Déploiement \& Automatisation
+\  Déploiement \& Automatisation
 
 
 
