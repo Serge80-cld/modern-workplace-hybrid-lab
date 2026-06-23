@@ -1,1 +1,187 @@
+# 08 – Power BI (Reporting Modern Workplace)
 
+Power BI est la plateforme de reporting moderne permettant de visualiser, analyser et partager les données du Modern Workplace.  
+Elle permet de transformer les données Intune, MECM, Entra ID, MDE ou Graph en tableaux de bord clairs et exploitables.
+
+---
+
+# 🔹 1. Pourquoi Power BI est essentiel dans le Modern Workplace
+
+- Visibilité sur l’état du parc
+- Suivi de la conformité
+- Suivi des mises à jour Windows
+- Suivi des applications
+- Suivi des incidents de sécurité
+- Suivi des déploiements Autopilot
+- Suivi des devices hybrides / cloud-only
+
+ **Un ingénieur Modern Workplace doit savoir produire des dashboards.**
+
+---
+
+# 🔹 2. Sources de données Modern Workplace
+
+Power BI peut se connecter à :
+
+### ✔️ Microsoft Graph  
+- Devices  
+- Users  
+- Groups  
+- Intune  
+- Autopilot  
+- MDE  
+
+### ✔️ Intune Data Warehouse  
+- Données historiques  
+- Conformité  
+- Applications  
+- Configurations  
+- Inventaire  
+
+### ✔️ MECM SQL  
+- Collections  
+- Inventaire matériel  
+- Inventaire logiciel  
+- Déploiements  
+- Task Sequences  
+
+### ✔️ Fichiers CSV / JSON  
+- Export HWID  
+- Export Intune  
+- Export MDE  
+
+👉 **Graph + Intune Data Warehouse = combo parfait.**
+
+---
+
+# 🔹 3. Exemples de dashboards Modern Workplace
+
+## ✔️ Dashboard 1 : Conformité Intune
+
+- % de devices conformes  
+- % de devices non conformes  
+- Raison de non‑conformité  
+- Version Windows  
+- Chiffrement BitLocker  
+- MDE onboarding  
+
+---
+
+## ✔️ Dashboard 2 : Parc Windows 10/11
+
+- Répartition Windows 10 vs 11  
+- Versions exactes (builds)  
+- Devices obsolètes  
+- Devices non patchés  
+- Devices non gérés  
+
+---
+
+## ✔️ Dashboard 3 : Autopilot
+
+- Nombre de devices Autopilot  
+- Succès / échecs ESP  
+- Durée moyenne du provisioning  
+- Profil Autopilot utilisé  
+- OEM / modèle / série  
+
+---
+
+## ✔️ Dashboard 4 : MDE (Sécurité)
+
+- Alertes actives  
+- Vulnérabilités critiques  
+- Expositions logicielles  
+- Devices isolés  
+- Score de sécurité  
+
+---
+
+## ✔️ Dashboard 5 : Applications Win32
+
+- Taux d’installation  
+- Échecs d’installation  
+- Versions installées  
+- État par groupe dynamique  
+
+---
+
+# 🔹 4. Exemple de requête Graph pour Power BI
+
+```http
+GET https://graph.microsoft.com/beta/deviceManagement/managedDevices
+Exemples de colonnes utiles :
+
+deviceName
+
+operatingSystem
+
+complianceState
+
+userPrincipalName
+
+azureADDeviceId
+
+autopilotRegistered
+
+isEncrypted
+
+ À utiliser dans Power BI via Get Data → Web → OAuth2.
+
+5. Architecture ASCII – Power BI Modern Workplace
+                   +----------------------+
+                   |      Microsoft       |
+                   |        Graph         |
+                   +----------+-----------+
+                              |
+                              | API REST
+                              |
+        +---------------------+----------------------+
+        |                                            |
++-------+-------+                            +--------+--------+
+|   Intune DW   |                            |   MECM SQL      |
+| (Data Export) |                            | (Inventaire)    |
++---------------+                            +------------------+
+        |
+        |
++-------+-------+
+|    Power BI   |
+| (Dashboards)  |
++---------------+
+        |
+        |
++-------+-------+
+|   Management  |
+| (Décisions)   |
++---------------+
+6. Ce qu’il faut retenir absolument
+Power BI = visibilité Modern Workplace
+
+Graph = source de données principale
+
+Intune Data Warehouse = historique
+
+MECM SQL = ancien monde
+
+Dashboards = gouvernance + pilotage
+
+Reporting = compétence clé en entreprise
+
+ Un ingénieur Modern Workplace doit savoir produire des dashboards clairs et actionnables.
+
+🔹 7. Lien avec la transition
+Power BI permet de suivre :
+
+Migration MECM → Intune
+
+Migration OSD → Autopilot
+
+Conformité Zero Trust
+
+Adoption Windows 11
+
+Sécurité MDE
+
+Parc hybride vs cloud-only
+
+ Power BI = la brique qui donne du sens à tout le reste.
