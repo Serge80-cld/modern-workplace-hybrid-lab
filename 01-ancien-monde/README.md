@@ -1,145 +1,142 @@
-# 01 – Ancien Monde (On-Prem)
+#  Laboratoire Hybride Modern Workplace  
+### Par Serge — Ingénieur Cloud & Modern Workplace
 
-Ce dossier présente les fondations de l’environnement traditionnel On-Premise, encore présent dans la majorité des entreprises.  
-Il constitue le socle historique du poste de travail avant la transition vers le Modern Workplace cloud.
+Ce dépôt GitHub présente un laboratoire complet couvrant **l’ancien monde On‑Prem**, la **transition hybride**, et le **nouveau monde cloud‑native Modern Workplace**.  
+Il constitue une démonstration structurée et opérationnelle des compétences nécessaires pour concevoir, migrer et maintenir un environnement moderne basé sur :
 
----
+- **Entra ID**
+- **Intune**
+- **Autopilot**
+- **Microsoft Graph**
+- **PowerShell**
+- **MECM (OSD)**
+- **Power BI**
+- **Zero Trust**
 
-## 🔹 1. Active Directory (AD DS)
-
-L’élément central de l’identité On-Prem :
-
-- Référentiel d’identité local
-- Authentification **Kerberos / NTLM**
-- Structure **OU** pour organiser les objets
-- Gestion des comptes, groupes, permissions
-- Dépend fortement du **DNS interne**
-
- Sans AD, aucune authentification locale, aucune GPO, aucun Domain Join.
+Ce laboratoire est conçu comme un **parcours pédagogique**, mais aussi comme un **portfolio technique** destiné aux recruteurs, architectes et équipes Modern Workplace.
 
 ---
 
-## 🔹 2. DNS (Domain Name System)
+#  Architecture du dépôt
 
-Le service critique souvent sous-estimé :
+Le laboratoire est organisé en 8 briques principales :
 
-- Résolution interne indispensable
-- Zones AD-intégrées
-- Dépendance directe avec Kerberos
-- Nécessaire pour MECM, GPO, Hybrid Join
+## 1️⃣ Ancien Monde (On‑Prem)
+Active Directory, DNS, DHCP, GPO, MECM, Domain Join.  
+Comprendre les fondations historiques du poste de travail.
 
- Si DNS tombe, tout tombe.
-
----
-
-## 🔹 3. DHCP
-
-Service d’attribution d’adresses IP :
-
-- Scopes, réservations
-- Options 066/067 pour **PXE**
-- Indispensable pour OSD MECM
-
-👉 Le DHCP est la porte d’entrée du poste sur le réseau.
+📁 `01-ancien-monde/`
 
 ---
 
-## 🔹 4. GPO (Group Policy Objects)
+## 2️⃣ Nouveau Monde (Cloud Modern Workplace)
+Entra ID, Intune, Autopilot, WUfB, MDE, Zero Trust.  
+Le modèle cloud‑first recommandé par Microsoft.
 
-Le mécanisme historique de configuration du poste :
-
-- Paramètres Windows
-- Sécurité
-- Scripts de démarrage
-- Mappage lecteurs, imprimantes
-- Hardening
-
-👉 Les GPO sont remplacées progressivement par **Intune Settings Catalog**.
+📁 `02-nouveau-monde/`
 
 ---
 
-## 🔹 5. MECM / SCCM
+## 3️⃣ Transition (Hybrid Join, Cloud Attach)
+La partie la plus critique : coexistence AD + Entra ID, Co‑Management, migration progressive.
 
-La solution de gestion On-Prem la plus répandue :
-
-- **OSD (Operating System Deployment)**  
-  → Task Sequences, Boot Images, PXE, WIM
-- **Packaging** (Applications, Packages)
-- **Collections** (ciblage dynamique)
-- **SUP / WSUS** (mises à jour)
-- **Inventaire matériel / logiciel**
-
- MECM reste présent dans 80 % des grands comptes.
+📁 `03-transition/`
 
 ---
 
-## 🔹 6. Domain Join
+## 4️⃣ Intune (Configuration, Compliance, Win32, PR)
+La plateforme moderne de gestion du poste : Settings Catalog, Compliance, Security Baselines, Packaging Win32, Proactive Remediations.
 
-Le modèle d’appartenance historique :
-
-- Appareil joint au domaine AD
-- Authentification Kerberos
-- Dépendance réseau interne
-- Dépendance aux contrôleurs de domaine
-
- Ce modèle est remplacé par **Entra Join** dans le cloud.
+📁 `04-intune/`
 
 ---
 
-## 🔹 7. Schéma ASCII – Architecture On-Prem
+## 5️⃣ Autopilot (Provisioning Moderne)
+Le remplacement d’OSD : ESP, User‑Driven, Self‑Deploying, Pre‑Provisioning, Zero Touch.
 
-----------------------+
-|   Active Directory   |
-|  (Identité locale)   |
-+----------+-----------+
-|
-| Kerberos / NTLM
-|
-+------------------+------------------+
-|                                     |
-+-------+-------+                     +--------+--------+
-|     DNS       |                     |       GPO       |
-| (Résolution)  |                     | (Config poste)  |
-+---------------+                     +------------------+
-|
-|
-+-------+-------+
-|     MECM      |
-|  (OSD, Apps)  |
-+---------------+
-|
-|
-+-------+-------+
-|     DHCP      |
-|   (PXE Boot)  |
-+---------------+
+📁 `05-autopilot/`
 
 ---
 
-## 🔹 8. Ce qu’il faut retenir absolument
+## 6️⃣ MECM OSD (Ancien Provisioning)
+PXE, Boot Images, WIM, Task Sequences, DP, SUP.  
+Comprendre l’ancien modèle pour mieux migrer vers Autopilot.
 
-- AD = identité locale  
-- DNS = cœur du fonctionnement  
-- DHCP = réseau + PXE  
-- GPO = configuration On-Prem  
-- MECM = OSD + packaging + collections  
-- Domain Join = modèle historique  
-- Tout dépend du réseau interne et des serveurs
-
- **C’est le monde d’hier, mais encore présent partout.**
+📁 `06-mecm-osd/`
 
 ---
 
-## 🔹 9. Lien avec la transition
+## 7️⃣ Automatisation PowerShell & Microsoft Graph
+Scripts modernes pour automatiser Intune, Entra ID, Autopilot, MDE.  
+Connect‑MgGraph, requêtes Graph, scripts opérationnels.
 
-Ce dossier prépare la compréhension de :
+📁 `07-automation-powershell-graph/`
 
-- Hybrid Join  
-- Cloud Attach  
-- Migration MECM → Intune  
-- Remplacement OSD → Autopilot  
+---
+
+## 8️⃣ Power BI (Reporting Modern Workplace)
+Dashboards de conformité, parc Windows, Autopilot, MDE, Intune Data Warehouse.
+
+📁 `08-powerbi/`
+
+---
+
+#  Objectifs du laboratoire
+
+- Comprendre l’évolution du poste de travail  
+- Maîtriser la transition On‑Prem → Cloud  
+- Automatiser un tenant Microsoft 365  
+- Déployer un poste moderne sans infrastructure  
+- Produire des dashboards de pilotage Modern Workplace  
+- Documenter comme un consultant / architecte  
+
+---
+
+#  Compétences démontrées
+
+- Architecture Modern Workplace  
+- Hybrid Identity (AD + Entra ID)  
+- Cloud Attach / Co‑Management  
+- Intune (Config, Compliance, Win32, PR)  
+- Autopilot (ESP, provisioning moderne)  
+- MECM OSD (Task Sequences, PXE, WIM)  
+- PowerShell 7 & Microsoft Graph  
+- Reporting Power BI  
 - Zero Trust  
-- Modern Auth
 
- **Sans comprendre l’ancien monde, on ne peut pas réussir la transition vers le nouveau.**
+---
 
+#  À propos de ce laboratoire
+
+Ce dépôt est conçu comme :
+
+- un **portfolio technique**  
+- un **support d’entretien**  
+- un **référentiel pédagogique**  
+- une **preuve de compétences Modern Workplace**  
+
+Il évoluera avec :
+
+- de nouveaux scripts  
+- des dashboards Power BI  
+- des exemples de politiques Intune  
+- des scénarios de migration  
+- des architectures avancées  
+
+---
+
+#  Contact
+
+Si vous souhaitez échanger autour du Modern Workplace, de la transition cloud ou d’opportunités professionnelles :
+
+📧 **Email** : *sergengindu1@yahoo.fr*  
+🔗 **LinkedIn** : *https://www.linkedin.com/in/serge-ngindu-48861031a*  
+
+---
+
+#  Modern Workplace : l’avenir du poste de travail  
+Ce laboratoire montre la maîtrise complète :
+
+**Ancien Monde → Transition → Nouveau Monde → Automatisation → Reporting**
+
+C’est la compétence clé recherchée aujourd’hui dans les équipes Cloud & Modern Workplace.
