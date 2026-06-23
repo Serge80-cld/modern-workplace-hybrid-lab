@@ -1,1 +1,175 @@
+# 03 – La Transition : Ancien Monde → Nouveau Monde
+
+Ce dossier représente la partie la plus critique du Modern Workplace :  
+**la transition entre l’infrastructure On-Prem traditionnelle et le modèle cloud moderne.**
+
+C’est ici que se joue la vraie valeur d’un ingénieur Modern Workplace.
+
+---
+
+# 🔹 1. Pourquoi la transition est essentielle
+
+Les entreprises ne passent pas directement :
+
+❌ de AD → Entra ID  
+❌ de GPO → Intune  
+❌ de MECM OSD → Autopilot  
+❌ de WSUS → WUfB  
+
+Elles passent par une **phase hybride**, souvent longue, complexe, progressive.
+
+ **C’est cette phase que tu maîtrises.**
+
+---
+
+# 🔹 2. Les trois piliers de la transition
+
+## **1) Hybrid Identity (AD + Entra ID)**
+
+- Entra Connect (synchronisation)
+- Hybrid Azure AD Join
+- Device Writeback
+- Password Hash Sync / PTA
+- Modern Authentication
+
+👉 Le poste existe dans **les deux mondes**.
+
+---
+
+## **2) Cloud Attach (MECM + Intune)**
+
+La brique la plus importante pour les grands comptes :
+
+- Co-Management
+- Workloads basculés progressivement (Compliance, Apps, Updates…)
+- Tenant Attach
+- Intune + MECM côte à côte
+- Inventaire cloud via MECM
+
+ MECM ne disparaît pas : il **s’attache au cloud**.
+
+---
+
+## **3) Migration progressive des workloads**
+
+| Workload | Ancien Monde | Nouveau Monde |
+|----------|--------------|----------------|
+| Config poste | GPO | Intune Settings Catalog |
+| Apps | MECM Packages | Win32 Intune |
+| OS Deployment | MECM OSD | Autopilot |
+| Updates | WSUS / SUP | WUfB |
+| Sécurité | GPO + AV | MDE + CA |
+| Scripts | PowerShell local | Graph + Proactive Remediations |
+
+ La migration se fait **par workload**, pas d’un coup.
+
+---
+
+# 🔹 3. Architecture ASCII – La Transition
++----------------------+
+|     Entra ID         |
+|  (Identité Cloud)    |
++----------+-----------+
+|
+| Sync (Entra Connect)
+|
++--------------------------+---------------------------+
+|                          |                           |
+|                Hybrid Azure AD Join                  |
+|                                                      |
++--------------------------+---------------------------+
+|
+|
++----------+-----------+
+|       Intune        |
+| (Config, Apps, Sec) |
++----------+-----------+
+|
+| Cloud Attach / Co-Management
+|
++----------+-----------+
+|        MECM          |
+| (OSD, Apps, WSUS)    |
++-----------------------+
+|
+|
++----------+-----------+
+|     AD On-Prem       |
+|  (Identité locale)   |
++-----------------------+
+
+ **Les deux mondes coexistent, communiquent, se synchronisent.**
+
+---
+
+# 🔹 4. Les scénarios concrets de transition
+
+### ✔️ Hybrid Join  
+Le poste existe dans AD **et** Entra ID.
+
+### ✔️ Cloud Attach  
+MECM devient visible dans Intune.
+
+### ✔️ Co-Management  
+Les workloads basculent un par un.
+
+### ✔️ Migration OSD → Autopilot  
+Le provisioning devient cloud-first.
+
+### ✔️ Migration GPO → Settings Catalog  
+Les configurations deviennent cloud-native.
+
+### ✔️ Migration WSUS → WUfB  
+Les mises à jour deviennent autonomes.
+
+### ✔️ Migration AV → MDE  
+La sécurité devient Zero Trust.
+
+---
+
+# 🔹 5. Les erreurs classiques des entreprises
+
+- Vouloir “tout basculer d’un coup”
+- Penser qu’Autopilot = OSD
+- Penser qu’Intune = GPO
+- Penser qu’Entra ID = AD
+- Négliger DNS / Hybrid Join
+- Négliger la gouvernance
+- Négliger la sécurité (CA, MFA)
+
+ **La transition est un projet, pas un bouton.**
+
+---
+
+# 🔹 6. Ce qu’il faut retenir absolument
+
+- La transition est **progressive**
+- MECM ne disparaît pas immédiatement
+- AD reste présent longtemps
+- Le cloud s’ajoute avant de remplacer
+- Les workloads migrent un par un
+- L’identité devient centrale
+- La sécurité devient Zero Trust
+
+👉 **C’est ici que se trouve la vraie expertise Modern Workplace.**
+
+---
+
+# 🔹 7. Pourquoi cette section est essentielle dans ton GitHub
+
+Parce qu’elle montre que tu maîtrises :
+
+- l’ancien monde  
+- le nouveau monde  
+- **et surtout la transition entre les deux**
+
+C’est ce que recherchent :
+
+- les architectes  
+- les managers Modern Workplace  
+- les grands comptes  
+- les ESN spécialisées Microsoft  
+
+
+
 
