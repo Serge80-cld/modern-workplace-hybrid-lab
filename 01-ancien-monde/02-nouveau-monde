@@ -1,1 +1,157 @@
+# 02 – Nouveau Monde (Cloud Modern Workplace)
+
+Ce dossier présente l’environnement Modern Workplace cloud-native basé sur Entra ID, Intune, Autopilot et Zero Trust.  
+Il représente le modèle moderne adopté par les entreprises pour remplacer progressivement l’infrastructure On-Prem.
+
+---
+
+## 🔹 1. Entra ID (Azure AD)
+
+Le nouveau référentiel d’identité cloud :
+
+- Authentification moderne (OAuth2, OpenID Connect)
+- MFA, Conditional Access
+- Identity Protection (User Risk, Sign-in Risk)
+- Device Registration / Entra Join
+- RBAC (rôles cloud)
+
+ **L’identité devient le nouveau périmètre de sécurité.**
+
+---
+
+## 🔹 2. Intune (Microsoft Endpoint Management)
+
+La plateforme cloud de gestion du poste :
+
+- **Settings Catalog** (remplace GPO)
+- **Compliance Policies**
+- **Security Baselines**
+- **WUfB** (remplace WSUS)
+- **Packaging Win32 (.intunewin)**
+- **Proactive Remediations**
+- **Monitoring & Reporting**
+
+👉 Intune = GPO + MECM + WSUS + scripts → en version cloud.
+
+---
+
+## 🔹 3. Windows Autopilot
+
+Le provisioning moderne qui remplace OSD :
+
+- User Driven
+- Self-Deploying
+- Pre-Provisioning (anciennement WhiteGlove)
+- ESP (Enrollment Status Page)
+- Zero Touch Deployment
+
+👉 **Autopilot remplace totalement les Task Sequences MECM.**
+
+---
+
+## 🔹 4. Windows Update for Business (WUfB)
+
+Le nouveau modèle de gestion des mises à jour :
+
+- Rings de déploiement
+- Feature Updates
+- Quality Updates
+- Deadline & Grace Period
+- Pas de serveur WSUS
+
+ **Cloud-native, sans infrastructure.**
+
+---
+
+## 🔹 5. Microsoft Defender for Endpoint (MDE)
+
+La brique sécurité du Modern Workplace :
+
+- EDR (détection & réponse)
+- TVM (vulnérabilités)
+- ASR (Attack Surface Reduction)
+- Intégration Intune
+- Automatisation & remédiation
+
+ **Sécurité Zero Trust intégrée au poste.**
+
+---
+
+## 🔹 6. Zero Trust
+
+Le modèle de sécurité moderne :
+
+- Verify explicitly
+- Least privilege access
+- Assume breach
+- Conditional Access
+- Compliance + Identity + Device Risk
+
+ **Le réseau n’est plus une zone de confiance.**
+
+---
+
+## 🔹 7. Schéma ASCII – Architecture Cloud Modern Workplace
++----------------------+
+|      Entra ID        |
+|  (Identité Cloud)    |
++----------+-----------+
+|
+| Modern Auth (OAuth2)
+|
++---------------------+----------------------+
+|                                            |
++-------+-------+                            +--------+--------+
+|     Intune    |                            |   Conditional   |
+| (Config, Sec) |                            |     Access      |
++---------------+                            +------------------+
+|
+|
++-------+-------+
+|   Autopilot   |
+| (Provisioning)|
++---------------+
+|
+|
++-------+-------+
+|     WUfB      |
+| (Updates)     |
++---------------+
+|
+|
++-------+-------+
+|      MDE      |
+|   (Sécurité)  |
++---------------+
+
+---
+
+## 🔹 8. Ce qu’il faut retenir absolument
+
+- Entra ID = nouvelle identité  
+- Intune = nouvelle gestion du poste  
+- Autopilot = nouveau provisioning  
+- WUfB = nouvelles mises à jour  
+- MDE = nouvelle sécurité  
+- Zero Trust = nouveau modèle de sécurité  
+- Cloud = plus de serveurs, plus de GPO, plus de WSUS, plus d’OSD
+
+ **C’est le monde moderne, cloud-first, identity-first.**
+
+---
+
+## 🔹 9. Lien avec la transition
+
+Ce dossier prépare la compréhension de :
+
+- Hybrid Join  
+- Cloud Attach  
+- Migration MECM → Intune  
+- Remplacement OSD → Autopilot  
+- Zero Trust  
+- Modern Auth
+
+ **Le nouveau monde ne remplace pas l’ancien d’un coup : il s’y superpose, puis le remplace progressivement.**
+
+
 
