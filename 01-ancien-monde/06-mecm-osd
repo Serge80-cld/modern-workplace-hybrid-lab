@@ -1,1 +1,163 @@
+# 06 – MECM OSD (Operating System Deployment)
+
+Ce dossier présente l’ancien modèle de déploiement de systèmes d’exploitation utilisé dans les environnements On-Prem via MECM (SCCM).  
+Il constitue la base historique du provisioning avant la transition vers Autopilot.
+
+---
+
+# 🔹 1. Les composants clés d’OSD
+
+OSD repose sur plusieurs briques techniques :
+
+### ✔️ PXE (Preboot Execution Environment)
+- Boot réseau
+- Dépend du DHCP (options 66/67)
+- Dépend du serveur PXE (DP)
+
+### ✔️ Boot Images
+- WinPE
+- Drivers réseau + stockage
+- Versioning obligatoire
+
+### ✔️ WIM (Images de référence)
+- Image personnalisée
+- Sysprep
+- Capture via MDT ou MECM
+
+### ✔️ Task Sequences
+- Logique de déploiement
+- Étapes séquentielles
+- Scripts PowerShell
+- Applications
+- Drivers
+- Redémarrages
+
+### ✔️ Distribution Points (DP)
+- Stockage des WIM
+- Stockage des packages
+- Bande passante critique
+
+### ✔️ WSUS / SUP
+- Mises à jour
+- Catalogues
+- Synchronisation
+
+👉 **OSD = lourd, complexe, dépendant du réseau et des serveurs.**
+
+---
+
+# 🔹 2. Architecture ASCII – OSD traditionnel
++----------------------+
+|        AD DS         |
+|  (Identité locale)   |
++----------+-----------+
+|
+|
++----------+-----------+
+|         MECM         |
+| (MP, SUP, SQL, DP)   |
++----------+-----------+
+|
+|
++----------+-----------+
+|         PXE          |
+|   (Boot réseau)      |
++----------+-----------+
+|
+|
++----------+-----------+
+|      WinPE / WIM     |
+|   (Task Sequence)    |
++-----------------------+
+
+---
+
+# 🔹 3. Les limites d’OSD
+
+- Dépendance totale au réseau interne  
+- Dépendance aux serveurs (DP, MP, SUP)  
+- Maintenance lourde (drivers, WIM, TS)  
+- Complexité élevée  
+- Risques d’erreurs (TS, drivers, PXE)  
+- Pas adapté au télétravail  
+- Pas adapté aux machines hors site  
+- Pas adapté aux déploiements massifs modernes  
+
+👉 **OSD est puissant, mais appartient à l’ancien monde.**
+
+---
+
+# 🔹 4. Pourquoi Autopilot remplace OSD
+
+| Élément | OSD (MECM) | Autopilot |
+|--------|-------------|-----------|
+| Provisioning | Task Sequence | ESP |
+| Image | WIM personnalisée | Image Windows native |
+| Réseau | PXE + LAN | Internet |
+| Identité | Domain Join | Entra Join |
+| Apps | Packages MECM | Win32 Intune |
+| Mises à jour | WSUS | WUfB |
+| Sécurité | GPO + AV | MDE + CA |
+| Infrastructure | Serveurs obligatoires | Aucune |
+
+👉 **Autopilot = OSD sans infrastructure, sans PXE, sans WIM.**
+
+---
+
+# 🔹 5. Scénarios où OSD reste utile
+
+Même si Autopilot remplace OSD, certains cas restent valables :
+
+- Déploiement d’images spécialisées (industrie, hôpitaux)  
+- Machines sans connexion Internet  
+- Scénarios legacy (Windows 7 → 10)  
+- Environnements non cloud  
+- Besoin d’un contrôle total sur l’image  
+
+👉 **OSD n’est pas mort, mais il n’est plus le standard.**
+
+---
+
+# 🔹 6. Scénarios où Autopilot doit remplacer OSD
+
+- Déploiements massifs  
+- Télétravail  
+- Parc moderne Windows 10/11  
+- Entreprises cloud-first  
+- Zero Trust  
+- Parc hybride ou cloud-only  
+- Renouvellement de matériel OEM  
+
+👉 **Autopilot est le provisioning moderne recommandé par Microsoft.**
+
+---
+
+# 🔹 7. Ce qu’il faut retenir absolument
+
+- OSD = ancien modèle, lourd, dépendant du réseau  
+- Autopilot = provisioning moderne, cloud-first  
+- ESP remplace les Task Sequences  
+- Win32 remplace les Applications MECM  
+- WUfB remplace WSUS  
+- Entra Join remplace Domain Join  
+- MDE remplace l’antivirus GPO  
+
+👉 **Comprendre OSD est essentiel pour comprendre pourquoi Autopilot est supérieur.**
+
+---
+
+# 🔹 8. Lien avec la transition
+
+OSD → Autopilot est l’une des migrations les plus importantes du Modern Workplace :
+
+- Moins d’infrastructure  
+- Moins de maintenance  
+- Plus de sécurité  
+- Plus de flexibilité  
+- Plus adapté au télétravail  
+- Plus rapide  
+- Plus fiable  
+
+👉 **Maîtriser OSD + Autopilot = profil Modern Workplace complet.**
+
 
